@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tarefas")
-@CrossOrigin(origins = "https://todo-angular-sable-two.vercel.app")
+@CrossOrigin(origins = {"http://localhost:4200", "https://todo-angular-sable-two.vercel.app"})
 public class TarefaController {
 
     private final TarefaRepository repo;
