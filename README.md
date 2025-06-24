@@ -49,8 +49,7 @@ Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento
 
     **Arquivo: `src/main/resources/application.properties`**
     ```properties
-    // Padrão de porta é 5432 ou 5433, na maioria dos casos
-    spring.datasource.url=jdbc:postgresql://localhost:${SUA_PORTA}/${SEU_DB}
+    spring.datasource.url=jdbc:postgresql://localhost:5432/${SEU_DB}
     spring.datasource.username=${SEU_USUARIO}
     spring.datasource.password=${SUA_SENHA}
     spring.jpa.hibernate.ddl-auto=update
