@@ -45,7 +45,8 @@ Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento
     ```
 
 3.  **Configure o Spring Boot:**
-    Altere o arquivo `src/main/resources/application.properties` para que o Spring Boot possa se conectar ao banco de dados que será criado pelo Docker. As variáveis `${...}`.
+    Altere o arquivo `src/main/resources/application.properties` para que o Spring Boot possa se conectar ao banco de dados que será criado pelo Docker. As variáveis `${...}`. Se estiver utilizando um banco externo (Supabase, Railway), utilize `spring.datasource.url=jdbc:postgresql://localhost:5432/${SEU_DB}`, se estiver usando um banco local, utilize `spring.datasource.url=jdbc:postgresql://host.docker.internal:5432/${SEU_DB}`.
+    Como estou usando Supabase, o resultado abaixo mostra essa perspectiva.
 
     **Arquivo: `src/main/resources/application.properties`**
     ```properties
@@ -55,13 +56,13 @@ Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento
     spring.jpa.hibernate.ddl-auto=update
     ```
 
-4.  **Suba os contêineres com Docker Compose:**
+5.  **Suba os contêineres com Docker Compose:**
     No terminal, a partir da raiz do projeto, execute o comando abaixo. Ele irá baixar as imagens necessárias e iniciar a aplicação e o banco de dados.
     ```bash
     docker-compose up --build
     ```
 
-5.  **Teste a aplicação:**
+6.  **Teste a aplicação:**
     Após os contêineres estarem no ar, a API estará disponível para testes no seu navegador ou cliente de API (Postman, Insomnia).
 
     * **URL Local:** [**http://localhost:8080/api/tarefas**](http://localhost:8080/api/tarefas)
